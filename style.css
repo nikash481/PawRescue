@@ -1,0 +1,155 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+.main-header {
+    background: #0b4e40;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    padding: 40px;
+    text-align: center;
+    background: #d7f3e3;
+}
+
+.btn {
+    background: orange;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #e69500;
+}
+
+/* Form */
+form {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #246b45;
+}
+
+/* Gallery */
+.gallery h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Stats */
+.stats {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-box h3 {
+    font-size: 28px;
+    color: #2e8b57;
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .gallery-container, .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        width: 90%;
+    }
+}

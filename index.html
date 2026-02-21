@@ -1,0 +1,83 @@
+<?php
+// Connect to database
+$conn = mysqli_connect("localhost", "root", "", "stray_rescue");
+if (!$conn) { die("Connection failed: " . mysqli_connect_error()); }
+
+// Total animals rescued
+$result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM reports");
+$row = mysqli_fetch_assoc($result);
+$total_animals = $row['total'] ?? 0;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stray Animal Rescue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <h1>🐾 Stray Animal Rescue Management System</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="report.html">Report Animal</a>
+    </nav>
+</header>
+<section class="hero">
+    <h2>Help Save Injured Stray Animals</h2>
+    <p>Report injured or sick animals and help rescue teams act quickly.</p>
+    <a class="btn" href="report.html">Report an Animal</a>
+</section>
+
+<section class="gallery">
+  <h2>Gallery of Rescues</h2>
+  <div class="gallery-container">
+
+      <div class="card">
+          <img src="images/dog.jfif" alt="Dog Rescue">
+          <p>Dog Rescue</p>
+      </div>
+
+      <div class="card">
+          <img src="images/cat.jfif" alt="Cat Treatment">
+          <p>Cat Treatment</p>
+      </div>
+
+      <div class="card">
+          <img src="images/volunteer.jfif" alt="Our Volunteers">
+          <p>Our Volunteers</p>
+      </div>
+
+  </div>
+</section>
+
+<section class="stats">
+    <h2>Our Impact So Far</h2>
+    <div class="stats-container">
+        <div class="stat-box">
+            <h3><?php echo $total_animals; ?></h3>
+            <p>Animals Rescued</p>
+        </div>
+        <div class="stat-box">
+            <h3>120+</h3>
+            <p>Active Volunteers</p>
+        </div>
+        <div class="stat-box">
+            <h3>5+</h3>
+            <p>Partner Organizations</p>
+        </div>
+    </div>
+
+    <!-- Optional: breakdown by type -->
+    <div style="margin-top:20px;">
+        <?php foreach($animal_counts as $type => $count): ?>
+            <p><?php echo $type . ': ' . $count; ?></p>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Animal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <h1>🐾 Stray Animal Rescue</h1>
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="report.html">Report Animal</a>
+    </nav>
+</header>
+
+<main>
+    <form id="reportForm" action="data.php" method="POST">
+        <label>Animal Type</label>
+        <select name="animal_type" required>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Bird">Bird</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Condition</label>
+        <select name="condition_type" required>
+            <option value="Injured">Injured</option>
+            <option value="Sick">Sick</option>
+            <option value="Accident">Accident</option>
+            <option value="Starving">Starving</option>
+        </select>
+
+        <label>Location</label>
+        <input type="text" name="location" placeholder="Enter location" required>
+
+        <label>Description</label>
+        <textarea name="description" placeholder="Describe animal condition" required></textarea>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="Enter 10-digit phone number" required pattern="\d{10}">
+
+        <button type="submit">Submit Report</button>
+    </form>
+</main>
+
+<footer>
+    <p>© 2026 Stray Animal Rescue. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
